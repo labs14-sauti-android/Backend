@@ -16,7 +16,9 @@
 
     <properties>
         <java.version>11</java.version>
+        <kotlin.version>1.3.10</kotlin.version>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -132,12 +134,28 @@
             <version>3.3.0</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.leangen.graphql/spqr -->
+        <dependency>
+            <groupId>io.leangen.graphql</groupId>
+            <artifactId>spqr</artifactId>
+            <version>0.10.0</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter -->
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-spring-boot-starter</artifactId>
             <version>5.0.2</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.graphql-java/graphql-java-tools -->
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>5.2.4</version>
+        </dependency>
+
 
     </dependencies>
 
