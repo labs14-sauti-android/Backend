@@ -1,9 +1,7 @@
 package com.lambdaschool.starthere.resolvers;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-import com.lambdaschool.starthere.models.MarketPrice;
-import com.lambdaschool.starthere.models.MarketPriceCountry;
-import com.lambdaschool.starthere.models.MarketPriceMarket;
+import com.lambdaschool.starthere.models.*;
 import com.lambdaschool.starthere.services.MarketPriceService;
 import lombok.RequiredArgsConstructor;
 
