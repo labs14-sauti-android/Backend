@@ -1,15 +1,15 @@
 package com.lambdaschool.starthere.models;
 
-
 import javax.persistence.*;
+import java.util.zip.Adler32;
 
 @Entity
-@Table(name = "markets")
-public class MarketPriceMarket extends Auditable{
+@Table(name = "products")
+public class MarketPriceProduct extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long marketid;
+    private long productid;
 
     @Column(nullable = false,
             unique = true)
