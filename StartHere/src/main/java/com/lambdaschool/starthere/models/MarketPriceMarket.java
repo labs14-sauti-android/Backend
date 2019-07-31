@@ -1,6 +1,6 @@
 package com.lambdaschool.starthere.models;
 
-public class Market {
+public class MarketPriceMarket {
 
 
 }

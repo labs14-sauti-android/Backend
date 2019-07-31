@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "currencies")
-public class Currency extends Auditable{
+public class MarketPriceCurrency extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
