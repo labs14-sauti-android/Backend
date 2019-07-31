@@ -1,0 +1,50 @@
+type MarketPriceCountry {
+    id: ID!
+    name: String
+    market: [MarketPriceMarket]
+}
+
+type MarketPriceProduct {
+    id: ID!
+    name: String
+}
+
+type MarketPriceCurrency {
+    id: ID!
+    name: String
+}
+
+type MarketPriceMarket {
+    id: ID!
+    name: String
+    country: [MarketPriceCountry]
+}
+
+type MarketPriceProductCat {
+    id: ID!
+    name: String
+    country: [MarketPriceCountry]
+    market: [MarketPriceMarket]
+}
+
+type MarketPrice {
+    id: ID!
+    country: [MarketPriceCountry]
+    market: [MarketPriceMarket]
+    product: [MarketPriceProduct]
+    product_category: [MarketPriceProductCat]
+}
+
+
+schema {
+    query: Query
+}
+
+type Query {
+    allMarketPriceCountries: [MarketPriceCountry]
+    allMarketPriceMarkets: {MarketPriceMarket]
+    allMarketPriceCurrencies: [MarketPriceCurrency]
+    allMarketPriceProductCats: [MarketPriceProductCat]
+    allMarketPrices: [MarketPrice]
+
+}

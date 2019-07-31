@@ -12,7 +12,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service(value = "quoteService")
+@Service(value = "questionService")
 public class QuestionServiceImpl implements QuestionService
 {
     @Autowired
