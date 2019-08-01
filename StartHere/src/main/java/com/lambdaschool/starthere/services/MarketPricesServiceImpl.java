@@ -1,9 +1,12 @@
 package com.lambdaschool.starthere.services;
 
 import com.lambdaschool.starthere.models.MarketPrice;
+import com.lambdaschool.starthere.models.Role;
+import com.lambdaschool.starthere.repository.MarketPriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Arrays;
@@ -13,9 +16,9 @@ import java.util.stream.Collectors;
 @Service
 public class MarketPricesServiceImpl {
 
-    @Value("${resource.tasks}")
+    @Value("${resource.mprices}")
     private String resource;
-    @Value("${resource.tasks}/{id}")
+    @Value("${resource.mprices}/{id}")
     private String idResource;
     @Autowired
     private RestTemplate restTemplate;
@@ -24,8 +27,11 @@ public class MarketPricesServiceImpl {
         return Arrays.stream(restTemplate.getForObject(resource, MarketPrice[].class)).collect(Collectors.toList());
     }
 
-    public MarketPrice create(MarketPrice marketPrice) {
-        return restTemplate.postForObject(resource, marketPrice, MarketPrice.class);
+    @Transactional
+    @Override
+    public MarketPrice save(MarketPrice marketPrice)
+    {
+        return (MarketPrice) MarketPriceRepository.save(marketPrice);
     }
 
 }

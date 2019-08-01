@@ -14,7 +14,7 @@ public class MarketPrice extends Auditable
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long marketpriceid;
     private List<MarketPriceCountry> countries;
-    private List<MarketPriceMarket> markets;
+    private List<MarketPriceCountry> markets;
     private String product_agg;
     private String product_cat;
     private String product;
@@ -28,8 +28,8 @@ public class MarketPrice extends Auditable
     public MarketPrice() {
     }
 
-    @JsonCreator
-    public MarketPrice(List<MarketPriceMarket> markets, String product_agg, String product_cat, String product, long wholesale, long retail, String currency, String updateDate) {
+
+    public MarketPrice(List<MarketPriceCountry> markets, String product_agg, String product_cat, String product, long wholesale, long retail, String currency, String updateDate) {
         this.markets = markets;
         this.product_agg = product_agg;
         this.product_cat = product_cat;
@@ -40,19 +40,19 @@ public class MarketPrice extends Auditable
         this.updateDate = updateDate;
     }
 
-    public void addCountry(MarketPriceCountry country) {this.countries.add(country);}
+    public void addMarketPriceCountry(MarketPriceCountry marketPriceCountry) {this.markets.add(marketPriceCountry);}
     
-    public void addMarket(MarketPriceMarket market) {this.markets.add(market);}
+    public void addMarketPriceMarket(MarketPriceCountry market) {this.markets.add(market);}
 
     public Long getMarketpriceid() {
         return marketpriceid;
     }
 
-    public List<MarketPriceCountry> getCountries() {
+    public List<MarketPriceCountry> getMarketPriceCountries() {
         return countries;
     }
 
-    public List<MarketPriceMarket> getMartkets() {
+    public List<MarketPriceCountry> getMartkets() {
         return markets;
     }
 
