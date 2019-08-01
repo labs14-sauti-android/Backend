@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "roles")
@@ -20,7 +21,7 @@ public class Role extends Auditable
     @OneToMany(mappedBy = "role",
                cascade = CascadeType.ALL)
     @JsonIgnoreProperties("role")
-    private String userRoles = new ArrayList<>();
+    private List<UserRoles> userRoles = new ArrayList<>();
 
     public Role()
     {
@@ -51,12 +52,12 @@ public class Role extends Auditable
         this.name = name;
     }
 
-    public String getUserRoles()
+    public List<UserRoles> getUserRoles()
     {
         return userRoles;
     }
 
-    public void setUserRoles(String userRoles)
+    public void setUserRoles(List<UserRoles> userRoles)
     {
         this.userRoles = userRoles;
     }
